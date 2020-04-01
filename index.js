@@ -49,21 +49,21 @@ var questions = [
   inquirer.prompt(questions).then(function(answers) {
     console.log('Our answers:',answers);
     var readMe = `
-    #Project Title: ${answers.title}
+    # Project Title: ${answers.title}
 
-    ##Description: ${answers.desc}
+    ## Description: ${answers.desc}
 
-    ##Table of Contents: ${answers.table_of_contents}
+    ## Table of Contents: ${answers.table_of_contents}
 
-    ##Installation: ${answers.installation}
+    ## Installation: ${answers.installation}
 
-    ##Usage: ${answers.usage}
+    ## Usage: ${answers.usage}
 
-    ###License: ${answers.license}
+    ### License: ${answers.license}
 
-    ###Contributing: ${answers.contrib}
+    ### Contributing: ${answers.contrib}
 
-    ###Tests: ${answers.tests}
+    ### Tests: ${answers.tests}
     `
     fs.writeFile("README.md", readMe, function(err){
         console.log(err);
