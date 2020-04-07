@@ -1,6 +1,7 @@
 // Get the package
 var inquirer = require("inquirer");
 var fs = require("fs");
+var axios = require("axios");
 
 var questions = [
     {
@@ -37,17 +38,23 @@ var questions = [
       {
         type: 'input',
         name: 'contrib',
-        message: "Who contributed to this project?",
+        message: "Who contributed to this project?"
       },
       {
         type: 'input',
         name: 'tests',
-        message: "What tests did you do for this project?",
+        message: "What tests did you do for this project?"
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: "Enter your github username"
       }
   ];
   
   inquirer.prompt(questions).then(function(answers) {
     console.log('Our answers:',answers);
+    axios.get(`https://api.github.com/users/${answers.github}`).then(function(data){
     var readMe = `
     # Project Title: ${answers.title}
 
@@ -64,8 +71,13 @@ var questions = [
     ### Contributing: ${answers.contrib}
 
     ### Tests: ${answers.tests}
+
+    ### Contributor: ![picture of ${data.data.name}](${data.data.avatar_url} "${data.data.name}")
     `
     fs.writeFile("README.md", readMe, function(err){
-        console.log(err);
+      console.log(err);
+  })
     })
+
+    
   });
