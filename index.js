@@ -80,7 +80,8 @@ inquirer.prompt(questions).then(function (answers) {
 
 ### Tests: ${answers.tests}
 
-### Contributor: ![picture of ${data.data.name}](${data.data.avatar_url} "${data.data.name.replace(regex, "'")}")
+### Contributor: 
+![picture of ${data.data.name}](${data.data.avatar_url} "${data.data.name.replace(regex, "'")}")
 ${email}
 
     `;
