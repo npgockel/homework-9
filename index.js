@@ -2,6 +2,7 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
 var axios = require("axios");
+require("dotenv").config();
 
 var questions = [
   {
@@ -54,15 +55,13 @@ var questions = [
 
 inquirer.prompt(questions).then(function (answers) {
   console.log("Our answers:", answers);
-  axios.get(`https://api.github.com/users/${answers.github}`).then(function (data) {
-    axios.get(`https://api.github.com/users/${answers.github}/events/public`).then(function (emailResponse) {
-      console.log(emailResponse.data[0].payload.commits[0].author);
-      const email = emailResponse.data[0].payload.commits[0].author.email;
-      const name = encodeURIComponent(data.data.name);
-      const title = encodeURIComponent(answers.title);
-      const regex = /"/gi;
-      const badge = `https://img.shields.io/badge/${name}-${title}-Chartreuse`;
-      var readMe = `
+  axios.get(`https://api.github.com/users/${answers.github}?access_token=${process.env.TOKEN}`).then(function (data) {
+    const email = data.data.email;
+    const name = encodeURIComponent(data.data.name);
+    const title = encodeURIComponent(answers.title);
+    const regex = /"/gi;
+    const badge = `https://img.shields.io/badge/${name}-${title}-Chartreuse`;
+    var readMe = `
 ![picture of badge](${badge})
 # Project Title: ${answers.title}
 
@@ -85,11 +84,10 @@ inquirer.prompt(questions).then(function (answers) {
 ${email}
 
     `;
-      fs.writeFile("README.md", readMe, function (err) {
-        if (err) {
-          console.log(err);
-        }
-      });
+    fs.writeFile("README.md", readMe, function (err) {
+      if (err) {
+        console.log(err);
+      }
     });
   });
 });

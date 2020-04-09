@@ -103,23 +103,3 @@ You are required to submit the following:
 
 - - -
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
-
-
-# Project Title: sdfgh
-
-## Description: sdfgh
-
-## Table of Contents: sdfg
-
-## Installation: sdfg
-
-## Usage: sdfg
-
-### License: Open-source
-
-### Contributing: sdfg
-
-### Tests: sdfg
-
-### Contributor: ![picture of Thomas "Test" McCarthy](https://avatars3.githubusercontent.com/u/13443736?v=4 "Thomas McCarthy")
-    
