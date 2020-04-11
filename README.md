@@ -1,23 +1,23 @@
 
-![picture of badge](https://img.shields.io/badge/Liz%20Munoz-sdf-Chartreuse)
-# Project Title: sdf
+![picture of badge](https://img.shields.io/badge/Nectarios%20Gockel-Unit%2009%20Node.js%20and%20ES6%2B%20Homework%3A%20Good%20README%20Generator-Chartreuse)
+# Project Title: Unit 09 Node.js and ES6+ Homework: Good README Generator
 
-## Description: sdf
+## Description: Create a command-line application that dynamically generates a README.md from a user's input
 
-## Table of Contents: sdf
+## Table of Contents: 
 
-## Installation: sdf
+## Installation: 
 
-## Usage: sdf
+## Usage: Node.js
 
 ### License: Open-source
 
-### Contributing: sdsdf
+### Contributing: Me, my self, and I...the class, TAs, and especially my tutor.
 
-### Tests: 
+### Tests: node index.js over and over and...
 
 ### Contributor: 
-![picture of Liz Munoz](https://avatars0.githubusercontent.com/u/59346164?v=4 "Liz Munoz")
-munoze714@gmail.com
+![picture of Nectarios Gockel](https://avatars3.githubusercontent.com/u/60376598?v=4 "Nectarios Gockel")
+npgockel@gmail.com
 
     
